@@ -4,10 +4,10 @@ services:
     image: mysql:8.0
 
     environment:
-      MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: fastapi_db
-      MYSQL_USER: fastapi_user
-      MYSQL_PASSWORD: fastapi123
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
     volumes:
       - mysql_data:/var/lib/mysql
@@ -29,6 +29,8 @@ services:
     environment:
       MYSQL_HOST: db
       MYSQL_PORT: 3306
+
+
       MYSQL_DATABASE: fastapi_db
       MYSQL_USER: fastapi_user
       MYSQL_PASSWORD: fastapi123
